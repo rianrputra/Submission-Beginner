@@ -1,25 +1,35 @@
 package com.riandev.submissiondicoding.model;
 
 public class Game {
-    private String name;
-    private String detail;
+    private String title;
+    private String desc;
     private int picture;
     private double rating;
 
-    public String getName() {
-        return name;
+    public String getGenres() {
+        return Genres;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGenres(String genres) {
+        Genres = genres;
     }
 
-    public String getDetail() {
-        return detail;
+    private String Genres;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public int getPicture() {

@@ -6,7 +6,7 @@ import com.riandev.submissiondicoding.model.Game;
 import java.util.ArrayList;
 
 public class GamesData {
-    private static String[] gameNames = {
+    private static String[] gameTitles = {
             "Assassin Creed Odyssey",
             "Final Fantasy VII Remake",
             "Kingdom Hearts III",
@@ -87,14 +87,28 @@ public class GamesData {
             6.0
     };
 
+    private static String[] gameGenres = {
+            "Action RPG, Open World",
+            "Action RPG, Turn-Based Action",
+            "Action RPG",
+            "Action RPG",
+            "Action RPG, Open World",
+            "Action",
+            "Arcade",
+            "Action RPG, Open World",
+            "Turn-Based, RPG",
+            "MMORPG, Action, Open World"
+    };
+
     public static ArrayList<Game> getListData(){
         ArrayList<Game> list = new  ArrayList<>();
-        for (int position = 0; position < gameNames.length; position++){
+        for (int position = 0; position < gameTitles.length; position++){
             Game game = new Game();
-            game.setName(gameNames[position]);
-            game.setDetail(gameDetails[position]);
+            game.setTitle(gameTitles[position]);
+            game.setDesc(gameDetails[position]);
             game.setPicture(gamePictures[position]);
             game.setRating(gameRatings[position]);
+            game.setGenres(gameGenres[position]);
             list.add(game);
         }
         return list;

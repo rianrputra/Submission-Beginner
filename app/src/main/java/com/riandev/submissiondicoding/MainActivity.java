@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.riandev.submissiondicoding.adapter.ListGameAdapter;
+import com.riandev.submissiondicoding.adapter.CardViewGameAdapter;
 import com.riandev.submissiondicoding.db.GamesData;
 import com.riandev.submissiondicoding.model.Game;
 
@@ -25,12 +25,22 @@ public class MainActivity extends AppCompatActivity {
         rvGames.setHasFixedSize(true);
 
         list.addAll(GamesData.getListData());
-        showRecyclerList();
+        showRecycledCardView();
     }
 
+    /*
     private void showRecyclerList() {
         rvGames.setLayoutManager(new LinearLayoutManager(this));
         ListGameAdapter listGameAdapter = new ListGameAdapter(list);
         rvGames.setAdapter(listGameAdapter);
+    }
+
+     */
+
+    private void showRecycledCardView() {
+        rvGames.setLayoutManager(new LinearLayoutManager(this));
+        CardViewGameAdapter cardViewGameAdapter = new CardViewGameAdapter(list);
+        rvGames.setAdapter(cardViewGameAdapter);
+
     }
 }

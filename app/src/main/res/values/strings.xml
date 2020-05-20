@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">Submission Dicoding</string>
+    <string name="app_name">Digaming Catalog</string>
     <string name="games_name">Games Name</string>
     <string name="detail">Detail</string>
     <string name="rating">rating</string>
+    <string name="game_title">Game Title</string>
+    <string name="game_image_source">Game Image Source</string>
+    <string name="rating_amount">Rating Amount</string>
+    <string name="game_description">game description</string>
+    <string name="genre">Genre</string>
+    <string name="share">Share</string>
 </resources>
