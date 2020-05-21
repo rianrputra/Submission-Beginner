@@ -100,6 +100,32 @@ public class GamesData {
             "MMORPG, Action, Open World"
     };
 
+    private static String[] gamePlatforms = {
+            "PC/PS4/XBOX",
+            "PS4",
+            "PC/PS4/XBOX",
+            "PC/PS4/XBOX",
+            "PS4",
+            "PS4",
+            "PC/PS4/XBOX/Switch",
+            "PC/PS4/XBOX",
+            "PC/PS4/XBOX",
+            "PC/PS4"
+    };
+
+    private static double[] gamePrices = {
+            59.99,
+            59.99,
+            59.99,
+            35.99,
+            49.99,
+            54.99,
+            24.99,
+            34.99,
+            79.99,
+            39.99
+    };
+
     public static ArrayList<Game> getListData(){
         ArrayList<Game> list = new  ArrayList<>();
         for (int position = 0; position < gameTitles.length; position++){
@@ -109,6 +135,8 @@ public class GamesData {
             game.setPicture(gamePictures[position]);
             game.setRating(gameRatings[position]);
             game.setGenres(gameGenres[position]);
+            game.setPlatform(gamePlatforms[position]);
+            game.setPrice(gamePrices[position]);
             list.add(game);
         }
         return list;

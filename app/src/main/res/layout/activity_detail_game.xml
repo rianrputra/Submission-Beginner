@@ -19,12 +19,14 @@
                 android:id="@+id/iv_desc_picture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:maxHeight="300dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/ac_odyssey"
-                android:scaleType="fitXY"/>
+                android:scaleType="centerCrop"/>
 
             <TextView
-                android:id="@+id/tv_pic_source"
+                android:id="@+id/tv_game_platform"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
@@ -62,7 +64,7 @@
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
             android:paddingTop="4dp"
-            android:paddingBottom="16dp"
+            android:paddingBottom="8dp"
             android:orientation="vertical">
 
             <TextView
@@ -114,6 +116,40 @@
                 android:textSize="14sp"
                 android:text="@string/game_description"
                 android:textColor="@android:color/white"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="@android:color/white"
+                        android:text="@string/price_tv" />
+
+                    <TextView
+                        android:id="@+id/tv_game_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="@string/price_amount"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"/>
+
+                </TableRow>
+
+            </TableLayout>
 
         </LinearLayout>
 

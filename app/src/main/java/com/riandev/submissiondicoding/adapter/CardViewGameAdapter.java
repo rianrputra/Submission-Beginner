@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -54,17 +55,26 @@ public class CardViewGameAdapter extends RecyclerView.Adapter<CardViewGameAdapte
                 intent.putExtra("rating", String.valueOf(listGame.get(holder.getAdapterPosition()).getRating()));
                 intent.putExtra("genre", listGame.get(holder.getAdapterPosition()).getGenres());
                 intent.putExtra("picture", listGame.get(holder.getAdapterPosition()).getPicture());
+                intent.putExtra("platform", listGame.get(holder.getAdapterPosition()).getPlatform());
+                intent.putExtra("price", String.valueOf(listGame.get(holder.getAdapterPosition()).getPrice()));
                 v.getContext().startActivity(intent);
             }
         });
 
-        holder.btnShareFb.setOnClickListener(new View.OnClickListener() {
+        holder.layoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String shareText = listGame.get(holder.getAdapterPosition()).getTitle() + " - " + listGame.get(holder.getAdapterPosition()).getDesc();
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+                sendIntent.setType("text/plain");
+                v.getContext().startActivity(sendIntent);
             }
         });
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -74,7 +84,8 @@ public class CardViewGameAdapter extends RecyclerView.Adapter<CardViewGameAdapte
     public class CardViewViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPicture;
         TextView tvTitle, tvDesc;
-        ImageButton btnShareFb, btnShareWa;
+        ImageButton btnShareFb;
+        LinearLayout layoutButton;
 
         public CardViewViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,7 +93,7 @@ public class CardViewGameAdapter extends RecyclerView.Adapter<CardViewGameAdapte
             tvTitle = itemView.findViewById(R.id.tv_item_title);
             tvDesc = itemView.findViewById(R.id.tv_item_desc);
             btnShareFb = itemView.findViewById(R.id.btn_share_fb);
-            btnShareWa = itemView.findViewById(R.id.btn_share_wa);
+            layoutButton = itemView.findViewById(R.id.layout_button);
         }
     }
 }

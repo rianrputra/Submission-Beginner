@@ -5,6 +5,24 @@ public class Game {
     private String desc;
     private int picture;
     private double rating;
+    private String platform;
+    private Double price;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
 
     public String getGenres() {
         return Genres;

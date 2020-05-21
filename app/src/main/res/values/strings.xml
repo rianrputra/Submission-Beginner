@@ -9,4 +9,8 @@
     <string name="game_description">game description</string>
     <string name="genre">Genre</string>
     <string name="share">Share</string>
+    <string name="name">Rian</string>
+    <string name="share_now">Share now!</string>
+    <string name="price_amount">price amount</string>
+    <string name="price_tv">Price</string>
 </resources>
